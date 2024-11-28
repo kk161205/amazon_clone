@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f3f3f3;
+        }
+
+        .contact-form-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .contact-form-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+            display: none;
+            margin-top: 5px;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ffa41c;
+            color: #111;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .submit-button:hover {
+            background-color: #ff8f00;
+        }
+
+        .success-message {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #4caf50;
+            border-radius: 4px;
+            background-color: #d4edda;
+            color: #155724;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-form-container">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name">
+                <div id="nameError" class="error-message">Name is required.</div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your email">
+                <div id="emailError" class="error-message">Enter a valid email address.</div>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Your message"></textarea>
+                <div id="messageError" class="error-message">Message is required.</div>
+            </div>
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+        <div id="successMessage" class="success-message">
+            Your message has been successfully sent. Thank you!
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from refreshing the page
+
+            let isValid = true;
+
+            // Get input values and error message elements
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const message = document.getElementById('message');
+            const nameError = document.getElementById('nameError');
+            const emailError = document.getElementById('emailError');
+            const messageError = document.getElementById('messageError');
+            const successMessage = document.getElementById('successMessage');
+
+            // Reset error messages
+            nameError.style.display = 'none';
+            emailError.style.display = 'none';
+            messageError.style.display = 'none';
+
+            // Name validation
+            if (name.value.trim() === '') {
+                nameError.style.display = 'block';
+                isValid = false;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email.value.trim())) {
+                emailError.style.display = 'block';
+                isValid = false;
+            }
+
+            // Message validation
+            if (message.value.trim() === '') {
+                messageError.style.display = 'block';
+                isValid = false;
+            }
+
+            // If the form is valid, show the success message and reset the form
+            if (isValid) {
+                successMessage.style.display = 'block';
+                this.reset(); // Reset the form fields
+
+                // Hide the success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 5000);
+            }
+        });
+    </script>
+</body>
+</html>

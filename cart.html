@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f4f4f4;
+}
+
+.shop-container, .cart-container {
+    padding: 20px;
+    width: 45%;
+    background: white;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+.product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.product h3 {
+    margin: 0;
+}
+
+.product button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product button:hover {
+    background-color: #218838;
+}
+
+.cart-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-items p {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.cart-total {
+    margin-top: 20px;
+    font-size: 18px;
+    text-align: right;
+    color: #333;
+}
+
+</style>
+<body>
+    <div class="shop-container">
+        <h1>Shop</h1>
+        <div class="product-list">
+            <div class="product">
+                <h3>laptop</h3>
+                <p>Price: $100</p>
+                <button onclick="addToCart('laptop', 100)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <h3>mouse</h3>
+                <p>Price: $20</p>
+                <button onclick="addToCart('mouse', 20)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <h3>keyboard</h3>
+                <p>Price: $15</p>
+                <button onclick="addToCart('keyboard', 15)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="cart-container">
+        <h2>Shopping Cart</h2>
+        <div class="cart-items" id="cartItems">
+            <p>Your cart is empty.</p>
+        </div>
+        <div class="cart-total">
+            <strong>Total: $<span id="cartTotal">0</span></strong>
+        </div>
+    </div>
+
+    <script>
+        // cart.js
+
+let cart = [];
+let total = 0;
+
+// Add item to cart
+function addToCart(productName, price) {
+    const cartItems = document.getElementById("cartItems");
+    const cartTotal = document.getElementById("cartTotal");
+
+    // Check if cart is empty and clear placeholder text
+    if (cartItems.innerHTML.includes("Your cart is empty")) {
+        cartItems.innerHTML = "";
+    }
+
+    // Add item to cart
+    cart.push({ name: productName, price });
+    total += price;
+
+    // Update cart items display
+    cartItems.innerHTML = cart
+        .map(
+            (item, index) =>
+                `<p>${item.name} - $${item.price} <button onclick="removeFromCart(${index})">Remove</button></p>`
+        )
+        .join("");
+
+    // Update total
+    cartTotal.textContent = total.toFixed(2);
+}
+
+// Remove item from cart
+function removeFromCart(index) {
+    const cartItems = document.getElementById("cartItems");
+    const cartTotal = document.getElementById("cartTotal");
+
+    // Remove the selected item
+    total -= cart[index].price;
+    cart.splice(index, 1);
+
+    // Update cart items display
+    if (cart.length === 0) {
+        cartItems.innerHTML = "<p>Your cart is empty.</p>";
+    } else {
+        cartItems.innerHTML = cart
+            .map(
+                (item, index) =>
+                    `<p>${item.name} - $${item.price} <button onclick="removeFromCart(${index})">Remove</button></p>`
+            )
+            .join("");
+    }
+
+    // Update total
+    cartTotal.textContent = total.toFixed(2);
+}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div id="top" class="navbar">
+            <div class="navlogo border">
+                <div class="logo"></div>
+            </div>
+            <div class="navadd border">
+                <p class="add1">
+                    Deliver to
+                </p>
+                <div class="addicon">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p class="add2">India</p>
+                </div>
+            </div>
+
+            <div class="navsearch">
+                <select class="searchselect">
+                    <option>All</option>
+                </select>
+                <input placeholder="Search Amazon" class="searchinput">
+                <div class="searchicon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+            <div class="navsignin border">
+                <p><span>Hello, sign in</span></p>
+                <p class="navtwo">Account & Lists</p>
+                <div class="dropdown-content">
+                    <a href="registration.html">Your Account</a>
+                    <a href="#">Orders</a>
+                    <a href="#">Wishlist</a>
+                    <a href="#">Sign Out</a>
+                </div>
+            </div>
+            
+            <div class="navreturn border">
+                <p><span>Returns</span></p>
+                <p class="navtwo">& Orders</p>
+            </div>
+            <div class="navcart" onclick="location.href='cart.html'">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Cart
+            </div>
+        </div>
+        <div class="panel">
+            <div class="panelall">
+                <i class="fa-solid fa-bars"></i>
+                All
+            </div>
+            <div class="panelops">
+                <p>Today's Deals</p>
+                <p onclick="location.href='contact.html'">Customer Service</p>
+                <p>Registry</p>
+                <p>Gift Cards</p>
+                <p>Sell</p>
+            </div>
+            <div class="paneldeals" onclick="location.href='Filter_index.html'">
+                Shop deals in Electronics
+            </div>
+        </div>
+    </header>
+
+    <div class="slideshow-container">
+        <div class="mySlides fade" data-color="#4400ad">
+            <img src="amazon section1.jpg" style="width:100%">
+        </div>
+        
+        <div class="mySlides fade" data-color="#ff6201">
+            <img src="amazon section2.jpg" style="width:100%">
+        </div>
+        
+        <div class="mySlides fade" data-color="#d23c99">
+            <img src="amazon section3.jpg" style="width:100%">
+        </div>
+        
+      
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <div class="shopsec">
+        <div class="box">
+            <div class="boxcontent">
+                <h3>Deals in PCs</h3>
+                <div class="boximg" style="background-image: url('box1.jpg');"></div>
+                <p class="see-more">See more</p>
+                <div class="details">
+                    <p>Explore the latest deals on PCs, including gaming PCs, ultrabooks, and accessories.</p>
+                    <ul>
+                        <li>Gaming Laptops starting at $999</li>
+                        <li>Ultrabooks with premium features</li>
+                        <li>Desktop PCs for work and play</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="boxcontent">
+                <h3>Gaming Accessories</h3>
+                    <div class="boximg" style="background-image: url('box2.jpeg');"></div>
+                    <p class="see-more">See more</p>
+                    <div class="details">
+                        <p>Upgrade your gaming experience with top-rated accessories.</p>
+                        <ul>
+                            <li>High-quality headsets starting at $50</li>
+                            <li>Gaming mice with precision sensors</li>
+                            <li>RGB mechanical keyboards</li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="boxcontent">
+                <h3>Refresh your space</h3>
+                <div class="boximg" style="background-image: url('box3.jpeg');"></div>
+                <p class="see-more">See more</p>
+                <div class="details">
+                    <p>Explore our collection of home decor, furniture, and more.</p>
+                    <ul>
+                        <li>Living room furniture sets</li>
+                        <li>Wall art and decor</li>
+                        <li>Smart lighting solutions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="boxcontent">
+                <h3>Shop deals in Fashion</h3>
+                <div class="boximg" style="background-image: url('box4.jpeg');"></div>
+                <p class="see-more">See more</p>
+                <div class="details">
+                    <p>Browse our exclusive deals on fashion for all seasons and styles.</p>
+                    <ul>
+                        <li>Up to 50% off on women's fashion</li>
+                        <li>Men's clothing deals on top brands</li>
+                        <li>Exclusive discounts on accessories and footwear</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="boxcontent">
+                <h3>Amazon Gadget Store</h3>
+                <div class="boximg" style="background-image: url('box5.jpeg');"></div>
+                <p class="see-more">See more</p>
+                <div class="details">
+                    <p>Find cutting-edge gadgets and devices that make life easier and fun.</p>
+                    <ul>
+                        <li>Smart home devices</li>
+                        <li>Wearable tech</li>
+                        <li>Portable speakers and headphones</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="boxcontent">
+                <h3>Toys under $25</h3>
+                <div class="boximg" style="background-image: url('box6.jpg');"></div>
+                <p class="see-more">See more</p>
+                <div class="details">
+                    <p>Browse our collection of fun and educational toys for kids under $25.</p>
+                    <ul>
+                        <li>Action figures and dolls</li>
+                        <li>Puzzle games and crafts</li>
+                        <li>Outdoor play equipment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="boxcontent">
+                <h3>Fantastic Finds for Home</h3>
+                <div class="boximg" style="background-image: url('box7.jpeg');"></div>
+                <p class="see-more">See more</p>
+                <div class="details">
+                    <p>Discover amazing products to make your home more comfortable and stylish.</p>
+                    <ul>
+                        <li>Comfortable bedding</li>
+                        <li>Kitchenware and appliances</li>
+                        <li>Decorative accents</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="boxcontent">
+                <h3>A whole new way to work</h3>
+                <div class="boximg" style="background-image: url('box8.jpg');"></div>
+                <p class="see-more">See more</p>
+                <div class="details">
+                    <p>Explore tools and essentials to boost your productivity and creativity at work.</p>
+                    <ul>
+                        <li>Ergonomic office chairs</li>
+                        <li>Standing desks</li>
+                        <li>Tech accessories and organizers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footpanel1" onclick="location.href = '#top'">
+            Back to Top
+        </div>
+
+        <div class="footpanel2">
+            <ul>
+                <p>Get to Know Us</p>
+                <a>Careers</a>
+                <a>Blog</a>
+                <a>About Amazon</a>
+                <a>Investor Relations</a>
+                <a>Amazon Devices</a>
+                <a>Amazon Science</a>
+            </ul>
+            <ul>
+                <p>Make Money with Us</p>
+                <a>Sell products on Amazon</a>
+                <a>Sell on Amazon Business</a>
+                <a>Sell apps on Amazon</a>
+                <a>Become an Affiliate</a>
+                <a>Advertise Your Products</a>
+                <a>Self-Publish with Us</a>
+                <a>Host an Amazon Hub</a>
+                <a>›See More Make Money with Us</a>
+            </ul>
+            <ul>
+                <p>Amazon Payment Products</p>
+                <a>Amazon Business Card</a>
+                <a>Shop with Points</a>
+                <a>Reload Your Balance</a>
+                <a>Amazon Currency Converter</a>
+            </ul>
+            <ul>
+                <p>Let Us Help You</p>
+                <a>Amazon and COVID-19</a>
+                <a>Your Account</a>
+                <a>Your Orders</a>
+                <a>Shipping Rates & Policies</a>
+                <a>Returns and Replacements</a>
+                <a>Manage Your Content and Devices</a>
+                <a>Help</a>
+            </ul>
+        </div>
+        <div class="footpanel3">
+            <div class="logo1">
+
+            </div>
+        </div>
+        <div class="footpanel4">
+            <div class="pages">
+                <a>Conditions of Use</a>
+                <a>Privacy Notice</a>
+                <a>Your Ads Privacy Choices</a>
+            </div>
+        <div class="copyright">
+            © 1996-2024, Amazon.com, Inc. or its affiliates
+        </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    
+        let slides = document.getElementsByClassName("mySlides");
+        let shopsec = document.querySelector(".shopsec");
+        if (slides.length > 0 && shopsec) {
+            let firstSlide = slides[0];
+            let initialColor = firstSlide.getAttribute("data-color");
+            shopsec.style.backgroundColor = initialColor;
+        }
+    });
+
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+        let slides = document.getElementsByClassName("mySlides");
+        let shopsec = document.querySelector(".shopsec");
+
+        if (slides.length === 0 || !shopsec) return;
+
+        if (n > slides.length) { slideIndex = 1; }
+        if (n < 1) { slideIndex = slides.length; }
+
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+
+        let currentColor = slides[slideIndex - 1].getAttribute("data-color");
+        shopsec.style.backgroundColor = currentColor;
+    }
+
+    </script>
+</body>
+</html>
